@@ -8,8 +8,8 @@ license = "GPL-3.0-or-later"
 members = ["config", "cosmic-settings-daemon-config", "geonames"]
 
 [workspace.dependencies]
-cosmic-config = { git = "https://github.com/pop-os/libcosmic" }
-cosmic-theme = { git = "https://github.com/pop-os/libcosmic" }
+cosmic-config = { git = "https://github.com/pop-os/libcosmic", branch = "theme-v2" }
+cosmic-theme = { git = "https://github.com/pop-os/libcosmic", branch = "theme-v2" }
 
 # cosmic-config = { path = "../libcosmic/cosmic-config" }
 # cosmic-theme = { path = "../libcosmic/cosmic-theme" }
@@ -25,7 +25,7 @@ dirs = "6.0.0"
 notify = "8.2.0"
 tokio = { version = "1.47.1", features = ["macros", "net", "rt"] }
 udev = "0.9.3"
-zbus = { version = "5.11.0", default-features = false, features = ["tokio"] }
+zbus = { version = "5.15.0", default-features = false, features = ["tokio"] }
 tokio-stream = "0.1.17"
 sunrise = "2.1.0"
 cosmic-config.workspace = true
@@ -33,7 +33,7 @@ cosmic-theme.workspace = true
 cosmic-theme.export = true
 cosmic-comp-config = { git = "https://github.com/pop-os/cosmic-comp" }
 chrono = "0.4.42"
-libcosmic = { git = "https://github.com/pop-os/libcosmic", default-features = false }
+libcosmic = { git = "https://github.com/pop-os/libcosmic", branch = "theme-v2", default-features = false }
 acpid_plug = "0.1.2"
 upower_dbus = { git = "https://github.com/pop-os/dbus-settings-bindings" }
 locale1 = { git = "https://github.com/pop-os/dbus-settings-bindings" }
@@ -51,8 +51,8 @@ env_logger = "0.11.8"
 ddc-hi = "0.4.1"
 
 # For development and testing purposes
-# [patch.'https://github.com/pop-os/libcosmic']
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//" }
-# iced_futures = { git = "https://github.com/pop-os/libcosmic//" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//" }
+[patch.'https://github.com/pop-os/libcosmic']
+libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+iced_futures = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
